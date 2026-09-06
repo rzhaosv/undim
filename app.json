@@ -1,0 +1,54 @@
+{
+  "expo": {
+    "name": "Undim",
+    "slug": "undim",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "undim",
+    "userInterfaceStyle": "light",
+    "backgroundColor": "#FBF7F0",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.formaz.undim",
+      "buildNumber": "1",
+      "infoPlist": {
+        "NSUserNotificationsUsageDescription": "Undim can remind you once a day, at an hour you choose, to do your one thing. Reminders are scheduled on your phone; nothing is sent anywhere.",
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.formaz.undim",
+      "adaptiveIcon": {
+        "backgroundColor": "#1C1A17",
+        "foregroundImage": "./assets/adaptive-icon.png"
+      }
+    },
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 180,
+          "resizeMode": "contain",
+          "backgroundColor": "#FBF7F0"
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#E8A23B",
+          "defaultChannel": "reminders"
+        }
+      ]
+    ],
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "owner": "raymondzhao3000",
+    "extra": {
+      "eas": {}
+    }
+  }
+}
