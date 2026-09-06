@@ -1,7 +1,7 @@
-"""Attach newest processed build to Kotatsu 1.0, create a review submission with version + subs + group version, submit.
-Run: cd landed/.credentials && PYTHONPATH=. python3 ~/workspace/kotatsu/store/asc_submit.py [--dry-run]"""
+"""Attach newest processed build to Undim 1.0, create a review submission with version + subs + group version, submit.
+Run: cd landed/.credentials && PYTHONPATH=. python3 ~/workspace/undim/store/asc_submit.py <APP> <GROUP> <SUB...> [--dry-run]"""
 import asc, json, sys, time
-APP='6809071487'; GROUP='22362424'; SUBS=['6809071423','6809071873']; DRY='--dry-run' in sys.argv
+APP,GROUP=sys.argv[1],sys.argv[2]; SUBS=[a for a in sys.argv[3:] if not a.startswith('--')]; DRY='--dry-run' in sys.argv
 def err(r): return [ (e.get('code'), e.get('detail')) for e in r.get('body',{}).get('errors',[])] or r
 v=asc.api('GET',f'/v1/apps/{APP}/appStoreVersions?filter[platform]=IOS&limit=1&fields[appStoreVersions]=versionString,appStoreState')['data'][0]; VID=v['id']
 print('version', v['attributes'])
