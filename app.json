@@ -48,7 +48,9 @@
     },
     "owner": "raymondzhao3000",
     "extra": {
-      "eas": {}
+      "eas": {
+        "projectId": "46cf96dc-e9cf-4119-8242-fd91386dc212"
+      }
     }
   }
 }
