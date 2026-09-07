@@ -17,8 +17,8 @@ Everything below the first step is scripted. The first step needs a signed-in Ap
 4. eas.json: set `submit.production.ios.ascAppId` to APP, commit, push.
 
 5. Upload the IPA from the newest successful `undim-ios-build` run (must be one built AFTER commit 2553800, which baked the RevenueCat key in):
-   `gh run list -R rzhaosv/forma --workflow undim-ios-build.yml --limit 3`
-   `gh workflow run undim-ios-upload.yml -R rzhaosv/forma -f run_id=<RUN_ID>`
+   `gh run list -R tryforma/forma --workflow undim-ios-build.yml --limit 3`
+   `gh workflow run undim-ios-upload.yml -R tryforma/forma -f run_id=<RUN_ID>`
    Wait for the build to show `VALID` in ASC (`asc_submit.py --dry-run` prints builds).
 
 6. Submit: `PYTHONPATH=. python3 ~/workspace/undim/store/asc_submit.py APP GROUP SUB_MONTHLY SUB_YEARLY`
